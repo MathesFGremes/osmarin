@@ -2,22 +2,23 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
-class MainWindow(Gtk.Window):
-    def __init__(self):
-        Gtk.Window.__init__(self, title = 'title of the window')
+window = Gtk.Window()
 
-        # Button
-        self.button = Gtk.Button(label="click here!")
-        self.button.connect("clicked", self.button_clicked)
-        self.add(self.button)
-    
-    # User clicks button
-    def button_clicked(self, widget):
-        print("something")
+label = Gtk.Label()
+label.set_label("OMG, that is amazing. Don't you agree?")
+label.set_angle(45)
+label.set_halign(Gtk.Align.END)
 
+label2 = Gtk.Label()
+label2.set_label("WOOOWWWWW, its so cool")
+label2.set_angle(90)
+label2.set_halign(Gtk.Align.END)
 
-window = MainWindow()
-#window = Gtk.Window()
+#window.add(label)
+window.add(label2)
+
+print(label.get_properties("angle"))
+
 window.connect("delete-event", Gtk.main_quit)
 window.show_all()
 Gtk.main()
