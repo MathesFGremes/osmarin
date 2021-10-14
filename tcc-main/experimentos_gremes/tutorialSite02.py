@@ -20,12 +20,25 @@ class MyWindow(Gtk.Window):
         self.button2.connect("clicked", self.on_button2_clicked)
         self.box.pack_start(self.button2, True, True, 0)
 
+        self.button3 = Gtk.Button(label="Thanks")
+        self.button3.connect("clicked", self.on_button3_clicked)
+        self.box.pack_end(self.button3, True, True, 0)
+
+        self.button4 = Gtk.Button(label="Nice")
+        self.button4.connect("clicked", self.on_button4_clicked)
+        self.box.pack_end(self.button4, True, True, 0)
+
     def on_button1_clicked(self, widget):
         print("Hello")
 
     def on_button2_clicked(self, widget):
         print("Goodbye")
 
+    def on_button3_clicked(self, widget):
+        print("Thanks")
+
+    def on_button4_clicked(self, widget):
+        print("Nice")
 
 win = MyWindow()
 win.connect("destroy", Gtk.main_quit)
