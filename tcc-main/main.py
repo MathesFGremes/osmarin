@@ -54,7 +54,8 @@ if __name__ == '__main__':
     window.connect('destroy', Gtk.main_quit)
 
     specs_label = Gtk.Label()
-    specs_label.set_markup('<b>Filter specifications</b>')
+    #specs_label.set_markup('<b>Filter specifications</b>')
+    specs_label.set_markup('<span foreground="#002A00" size="xx-large" underline_color="#00FF00">Filter specifications</span>')
 
     design_method = LabeledComboBoxText(label='Design method', options=factory.filters.keys())
 
